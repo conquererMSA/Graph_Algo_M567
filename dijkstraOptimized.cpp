@@ -16,7 +16,7 @@ void dijkstraOptimized(int src){
     while(!pq.empty()){
         pair<int,int> parent=pq.top();
         int node=parent.first;
-        // int cost=parent.second;
+        int cost=parent.second;
         pq.pop();
         for(pair<int,int> child:v[node]){
             int childNode=child.first;
