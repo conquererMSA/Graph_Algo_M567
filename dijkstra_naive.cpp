@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
-int N=10e2;
+const int N=100;
 vector<pair<int,int>> v[N];
 int dis[N];
 void dijkstra_naive(int src){
-    int queue<pair<int,int>> q;
+    queue<pair<int,int>> q;
     dis[src]=0;
     q.push({src,0});
     while(!q.empty()){
@@ -32,9 +32,12 @@ int main(){
       v[b].push_back({a,c});
     }
     
-    for(i=0;i<n; i++){
+    for(int i=0;i<n; i++){
         dis[i]=INT_MAX;
     }
     dijkstra_naive(0);
+    for(int i=0; i<n; i++){
+        cout<<i<<" "<<dis[i]<<endl;
+    }
     return 0;
 }
